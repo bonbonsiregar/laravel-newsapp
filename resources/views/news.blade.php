@@ -18,7 +18,7 @@
             <span class="news__author">{{$berita->author}}</span><br>
             <span class="news__published">{{$berita->publishedAt}}</span>
             <span class="news__source">{{$berita->source->name}}</span><br>
-            <a href="{{ $berita->url }}"class="news__url">Link</a>
+            <a href="{{ $berita->url }}" target="_blank" class="news__url">Link</a>
             </div>
             @endforeach
             {{-- </div> --}}
