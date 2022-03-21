@@ -8,21 +8,20 @@
 </head>
 <body>
     <div>
-        <h1 class="head__text font-sans text-4xl m-3">News App</h1>
+        <h1 class="head__text font-sans text-4xl m-3">News App</h1></h1>
         <div class="all__news">
-            {{-- <div class="news"> --}}
-            @foreach($news->articles as $berita)
+            @foreach($results as $berita)
             <div class="news">
-            <h1 class="news_title">{{$berita->title}}</h1>
-            <p class="news__desc">{{$berita->description}}</p>
-            <span class="news__author">{{$berita->author}}</span><br>
-            <span class="news__published">{{$berita->publishedAt}}</span>
-            <span class="news__source">{{$berita->source->name}}</span><br>
-            <a href="{{ $berita->url }}" target="_blank" class="news__url">Link</a>
+            <h1 class="news_title">{{$berita['title']}}</h1>
+            <p class="news__desc">{{$berita['description']}}</p>
+            <span class="news__author">{{$berita['author']}}</span><br>
+            <span class="news__published">{{$berita['publishedAt']}}</span>
+            <span class="news__source">{{$berita['source']['name']}}</span><br>
+            <a href="{{ $berita['url'] }}" target="_blank" class="news__url">Link</a>
             </div>
             @endforeach
-            {{-- </div> --}}
+            {{$results->links()}} 
         </div>
-    </div>    
+    </div>
 </body>
 </html>
